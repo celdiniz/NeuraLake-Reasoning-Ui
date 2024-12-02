@@ -1,60 +1,63 @@
 import React, { useState } from 'react';
 import { Send, Square } from 'lucide-react';
-
 interface ChatInputProps {
   onSendMessage: (content: string) => void;
   isLoading: boolean;
   onPauseGeneration: () => void;
 }
-
-const ChatInput: React.FC<ChatInputProps> = ({ 
-  onSendMessage, 
+const ChatInput: React.FC<ChatInputProps> = ({
+  onSendMessage,
   isLoading,
-  onPauseGeneration 
+  onPauseGeneration,
 }) => {
   const [message, setMessage] = useState('');
-
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (message.trim() && !isLoading) {
-      onSendMessage(message.trim());
+      onSendMessage(message);
       setMessage('');
     }
   };
-
+  const handlePause = () => {
+    if (isLoading) {
+      onPauseGeneration();
+    }
+  };
   return (
-    <form onSubmit={handleSubmit} className="relative">
-      <textarea
-        value={message}
-        onChange={(e) => setMessage(e.target.value)}
-        placeholder="Type your message..."
-        className="w-full p-4 pr-24 rounded-lg border border-gray-300 dark:border-gray-600 
-                 bg-white dark:bg-gray-800 text-gray-900 dark:text-white shadow-sm 
-                 focus:ring-2 focus:ring-indigo-500 focus:border-transparent resize-none h-24"
-        disabled={isLoading}
-      />
-      <div className="absolute right-2 bottom-2 flex space-x-2">
-        {isLoading && (
+    <div className="flex flex-col">
+      <form onSubmit={handleSubmit} className="flex flex-grow">
+        <textarea
+          value={message}
+          onChange={(e) => setMessage(e.target.value)}
+          placeholder="Digite sua mensagem..."
+          className={`flex-grow p-4 rounded-lg border shadow-sm h-24 resize-none 
+                   text-gray-900 bg-white dark:text-white dark:bg-gray-800 
+                   dark:border-gray-600 focus:ring-2 focus:ring-indigo-500 
+                   focus:border-transparent ${isLoading ? 'bg-opacity-50' : ''}`}
+          disabled={isLoading}
+        />
+        <div className="flex items-center space-x-2 px-4 py-2 bg-gray-100 dark:bg-gray-700 rounded-r-lg">
+          {isLoading && (
+            <button
+              type="button"
+              onClick={handlePause}
+              className="p-2 rounded-full bg-red-600 text-white hover:bg-red-700 
+                       transition-colors"
+            >
+              <Square className="w-5 h-5" />
+            </button>
+          )}
           <button
-            type="button"
-            onClick={onPauseGeneration}
-            className="p-2 rounded-full bg-red-600 text-white hover:bg-red-700 
-                     transition-colors flex items-center space-x-1"
+            type="submit"
+            disabled={isLoading || !message.trim()}
+            className="p-2 rounded-full bg-indigo-600 text-white hover:bg-indigo-700 
+                      disabled:bg-gray-400 disabled:cursor-not-allowed transition-colors"
           >
-            <Square className="w-5 h-5" />
+            <Send className="w-5 h-5" />
           </button>
-        )}
-        <button
-          type="submit"
-          disabled={isLoading || !message.trim()}
-          className="p-2 rounded-full bg-indigo-600 text-white hover:bg-indigo-700 
-                   disabled:bg-gray-400 disabled:cursor-not-allowed transition-colors"
-        >
-          <Send className="w-5 h-5" />
-        </button>
-      </div>
-    </form>
+        </div>
+      </form>
+    </div>
   );
 };
-
 export default ChatInput;

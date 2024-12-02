@@ -1,5 +1,5 @@
 import React from 'react';
-import { Brain } from 'lucide-react';
+import { Boxes } from 'lucide-react';
 
 interface SearchPageProps {
   onSubmit: (query: string) => void;
@@ -19,8 +19,8 @@ const SearchPage: React.FC<SearchPageProps> = ({ onSubmit, query, setQuery }) =>
     <div className="min-h-screen flex flex-col items-center justify-center p-4 transition-all duration-500">
       <div className="max-w-2xl w-full space-y-8 text-center">
         <div className="flex justify-center items-center space-x-4">
-          <Brain className="w-16 h-16 text-indigo-600" />
-          <h1 className="text-4xl font-bold text-gray-900 dark:text-white">AI Assistant</h1>
+          <Boxes className="w-16 h-16 text-indigo-600" />
+          <h1 className="text-4xl font-bold text-gray-900 dark:text-white">NeuraLake Chat</h1>
         </div>
         
         <form onSubmit={handleSubmit} className="mt-8">
