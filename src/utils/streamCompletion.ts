@@ -25,8 +25,10 @@ export async function streamCompletion({
       },
       body: JSON.stringify({
         messages,
-        model: 'gpt-3.5-turbo',
+        model: 'iSA-02-Nano-1B',
         stream: true,
+        temperature: 1.5,
+        max_tokens: 8192,
       }),
       signal,
     });
