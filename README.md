@@ -3,6 +3,8 @@
 Bem-vindo à interface oficial para o iSA-02, o primeiro **Small Reasoning Model (SRM)** do mundo. Esta interface foi projetada para facilitar o uso e a integração do modelo iSA-02 em diferentes aplicações de IA, aproveitando sua capacidade única de raciocínio lógico dinâmico com suporte a janelas de contexto de até **256K tokens**.
 
 ---
+![IMG_1916](https://github.com/user-attachments/assets/3971bd4f-6986-4f36-a9d8-f6d8d48d84e9)
+---
 
 ## 🌟 **Sobre o iSA-02**
 
