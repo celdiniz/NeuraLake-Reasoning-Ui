@@ -95,7 +95,7 @@ This interface is open source under the [Apache 2.0 License](LICENSE).
   title = {iSA-02: The First Small Reasoning Model, NeuraLake-Reasoning-Ui},
   year = {2024},
   license = {Apache 2.0},
-  url = {https://huggingface.co/NeuraLake/iSA-02},
+  url = {https://github.com/celdiniz/NeuraLake-Reasoning-Ui,https://huggingface.co/NeuraLakeAi/iSA-02-Nano-1B-Preview},
 }
 ```  
 
