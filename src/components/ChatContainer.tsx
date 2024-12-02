@@ -47,7 +47,7 @@ const ChatContainer: React.FC<ChatContainerProps> = ({
   return (
     <div className="flex flex-col h-screen">
       <div className="flex justify-between items-center p-4 border-b border-gray-200 dark:border-gray-700">
-        <h1 className="text-xl font-semibold text-gray-900 dark:text-white">NeuraLake reasoning UI</h1>
+        <h1 className="text-xl font-semibold text-gray-900 dark:text-white">NeuraLake: Open Reasoning UI</h1>
         <div className="flex items-center space-x-4">
           <button
             onClick={downloadConversation}
