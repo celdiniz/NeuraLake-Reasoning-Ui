@@ -1,6 +1,3 @@
-Got it! Here's the corrected version of the text, now tailored for a TypeScript interface using `npm` or `pnpm` for installation:
-
----
 
 # NeuraLake Open Reasoning UI  
 ## iSA-02 Interface - Open Source
