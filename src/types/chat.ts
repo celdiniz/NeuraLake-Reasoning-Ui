@@ -5,6 +5,14 @@ export interface Message {
   timestamp: number;
 }
 
-export interface Conversation {
+export interface Chat {
+  id: string;
+  title: string;
   messages: Message[];
+  timestamp: number;
+}
+
+export interface Conversation {
+  chats: Chat[];
+  activeChat: string | null;
 }
