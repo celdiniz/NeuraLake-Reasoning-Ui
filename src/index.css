@@ -5,6 +5,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  body {
+    @apply antialiased bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 overflow-hidden;
+  }
+}
+
 @keyframes slideIn {
   from {
     opacity: 0;
@@ -20,9 +26,35 @@
   animation: slideIn 0.3s ease-out forwards;
 }
 
-body {
-  @apply antialiased bg-gray-50 dark:bg-gray-900;
+/* Improved dark mode text readability */
+.dark {
+  color-scheme: dark;
 }
 
-/* Previous styles remain the same */
-/* ... */
+.dark ::selection {
+  background-color: rgba(139, 92, 246, 0.3);
+}
+
+/* Improved contrast for dark mode input placeholders */
+.dark input::placeholder,
+.dark textarea::placeholder {
+  color: rgba(156, 163, 175, 0.8);
+}
+
+/* Better focus states for dark mode */
+.dark *:focus {
+  outline-color: rgba(139, 92, 246, 0.5);
+}
+
+/* Smooth transitions */
+.transition-transform {
+  transition-property: transform;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 500ms;
+}
+
+.transition-opacity {
+  transition-property: opacity;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+}

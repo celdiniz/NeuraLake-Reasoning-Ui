@@ -1,5 +1,6 @@
 import React from 'react';
-import { X, RotateCcw } from 'lucide-react';
+import { X, RotateCcw, Moon, Sun } from 'lucide-react';
+import { useTheme } from '../contexts/ThemeContext';
 
 interface SettingsModalProps {
   isOpen: boolean;
@@ -20,6 +21,8 @@ const SettingsModal: React.FC<SettingsModalProps> = ({
   onSystemPromptChange,
   defaultSystemPrompt,
 }) => {
+  const { isDarkMode, toggleDarkMode } = useTheme();
+
   if (!isOpen) return null;
 
   return (
@@ -35,6 +38,22 @@ const SettingsModal: React.FC<SettingsModalProps> = ({
         <h2 className="text-xl font-bold mb-4 text-gray-900 dark:text-white">Settings</h2>
         
         <div className="space-y-4">
+          <div className="flex items-center justify-between p-2 bg-gray-50 dark:bg-gray-700 rounded-lg">
+            <span className="text-sm font-medium text-gray-700 dark:text-gray-300">
+              Dark Mode
+            </span>
+            <button
+              onClick={toggleDarkMode}
+              className="p-2 rounded-full bg-white dark:bg-gray-600 shadow-sm hover:bg-gray-50 dark:hover:bg-gray-500 transition-colors"
+            >
+              {isDarkMode ? (
+                <Sun className="w-5 h-5 text-yellow-500" />
+              ) : (
+                <Moon className="w-5 h-5 text-gray-600" />
+              )}
+            </button>
+          </div>
+
           <div>
             <label htmlFor="baseUrl" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
               API Base URL
@@ -45,7 +64,10 @@ const SettingsModal: React.FC<SettingsModalProps> = ({
               value={baseUrl}
               onChange={(e) => onBaseUrlChange(e.target.value)}
               placeholder="Enter your API base URL"
-              className="w-full p-2 rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+              className="w-full p-2 rounded-md border border-gray-300 dark:border-gray-600 
+                       bg-white dark:bg-gray-700 text-gray-900 dark:text-white 
+                       focus:ring-2 focus:ring-indigo-500 focus:border-transparent
+                       placeholder-gray-400 dark:placeholder-gray-500"
             />
           </div>
 
@@ -67,7 +89,10 @@ const SettingsModal: React.FC<SettingsModalProps> = ({
               value={systemPrompt}
               onChange={(e) => onSystemPromptChange(e.target.value)}
               rows={6}
-              className="w-full p-2 rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-2 focus:ring-indigo-500 focus:border-transparent resize-vertical"
+              className="w-full p-2 rounded-md border border-gray-300 dark:border-gray-600 
+                       bg-white dark:bg-gray-700 text-gray-900 dark:text-white 
+                       focus:ring-2 focus:ring-indigo-500 focus:border-transparent 
+                       resize-vertical placeholder-gray-400 dark:placeholder-gray-500"
             />
           </div>
         </div>
@@ -75,7 +100,8 @@ const SettingsModal: React.FC<SettingsModalProps> = ({
         <div className="mt-6 flex justify-end">
           <button
             onClick={onClose}
-            className="px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 transition-colors"
+            className="px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 
+                     transition-colors dark:bg-indigo-500 dark:hover:bg-indigo-600"
           >
             Done
           </button>
