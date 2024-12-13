@@ -36,7 +36,7 @@ const ChatInput: React.FC<ChatInputProps> = ({
           value={message}
           onChange={(e) => setMessage(e.target.value)}
           onKeyDown={handleKeyDown}
-          placeholder="Digite sua mensagem..."
+          placeholder="How can I help you ?"
           className={`flex-grow p-4 rounded-lg border shadow-sm h-24 resize-none 
                    text-gray-900 bg-white dark:text-white dark:bg-gray-800 
                    dark:border-gray-600 focus:ring-2 focus:ring-indigo-500 
