@@ -16,6 +16,9 @@ Welcome to the official interface for iSA-02, the world’s first **Small Reason
 
 ![image](https://github.com/user-attachments/assets/5869f3fa-1d46-4909-a884-d1f3c10f34fc)
 
+## You can continue edit your page
+
+![image](https://github.com/user-attachments/assets/cf62cc18-7c8c-410b-89ec-2def2f5b854d)
 ---
 
 ## 🌟 **About iSA-02**
