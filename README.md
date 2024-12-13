@@ -20,7 +20,7 @@ Welcome to the official interface for iSA-02, the world’s first **Small Reason
 
 ![image](https://github.com/user-attachments/assets/cf62cc18-7c8c-410b-89ec-2def2f5b854d)
 ---
-## Demo: ![video](https://youtu.be/ulRUaj-p-L4)
+## Demo: https://youtu.be/ulRUaj-p-L4
 ---
 ## 🌟 **About iSA-02**
 
