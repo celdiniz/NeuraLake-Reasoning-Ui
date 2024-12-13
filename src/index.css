@@ -1,0 +1,88 @@
+@import 'katex/dist/katex.min.css';
+@import 'prismjs/themes/prism-tomorrow.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply antialiased bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 overflow-hidden;
+  }
+}
+
+@layer components {
+  .markdown-content {
+    @apply prose dark:prose-invert max-w-none;
+  }
+
+  .preview-container {
+    @apply bg-white dark:bg-gray-900 rounded-lg p-4;
+    min-height: 100px;
+  }
+
+  .preview-container iframe {
+    @apply w-full h-full border-0;
+    min-height: 300px;
+  }
+
+  .code-block-wrapper {
+    @apply relative mt-4 mb-4;
+  }
+
+  .code-block-header {
+    @apply flex items-center justify-between px-4 py-2 bg-gray-700 rounded-t-lg;
+  }
+
+  .code-language {
+    @apply text-xs text-gray-300 font-mono;
+  }
+
+  .inline-code {
+    @apply bg-gray-100 dark:bg-gray-800 rounded px-1 py-0.5 text-sm font-mono;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slideIn {
+  animation: slideIn 0.3s ease-out forwards;
+}
+
+.dark {
+  color-scheme: dark;
+}
+
+.dark ::selection {
+  background-color: rgba(139, 92, 246, 0.3);
+}
+
+.dark input::placeholder,
+.dark textarea::placeholder {
+  color: rgba(156, 163, 175, 0.8);
+}
+
+.dark *:focus {
+  outline-color: rgba(139, 92, 246, 0.5);
+}
+
+.transition-transform {
+  transition-property: transform;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 500ms;
+}
+
+.transition-opacity {
+  transition-property: opacity;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+}
