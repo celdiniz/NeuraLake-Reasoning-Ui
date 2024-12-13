@@ -8,6 +8,11 @@ Welcome to the official interface for iSA-02, the world’s first **Small Reason
 ![IMG_1916](https://github.com/user-attachments/assets/3971bd4f-6986-4f36-a9d8-f6d8d48d84e9)  
 ---
 
+# Update: Run .MD and HTMF single file
+---
+![image](https://github.com/user-attachments/assets/77be1e50-46e6-4129-8738-6cc0b28ba9be)
+---
+
 ## 🌟 **About iSA-02**
 
 iSA-02 redefines the limits of reasoning in AI:  
