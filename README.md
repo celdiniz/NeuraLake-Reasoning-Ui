@@ -11,6 +11,11 @@ Welcome to the official interface for iSA-02, the world’s first **Small Reason
 # Update: Run .MD and HTMF single file
 ---
 ![image](https://github.com/user-attachments/assets/77be1e50-46e6-4129-8738-6cc0b28ba9be)
+
+## Click in Play:
+
+![image](https://github.com/user-attachments/assets/5869f3fa-1d46-4909-a884-d1f3c10f34fc)
+
 ---
 
 ## 🌟 **About iSA-02**
